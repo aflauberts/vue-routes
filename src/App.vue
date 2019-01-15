@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <router-link to="/home">Home</router-link>
-    <router-link to="/about">Sobre</router-link>
-      <router-link to="/profile/">Profile</router-link>
+    <router-link to="/home">Home</router-link>-
+    <router-link to="/about">Sobre</router-link>-
+    <router-link :to="'/profile/' +username ">Perfil</router-link> <br />
+    <button @click="irPara('/about')">Ir Para sobre</button>
     <router-view></router-view>
   </div>
 </template>
@@ -13,7 +14,13 @@
 export default {
   data() {
     return {
-      username: 'Michael'
+      username: 'michel',
+      
+    }
+  },
+  methods: {
+    irPara(path) {
+      this.$router.push(path)
     }
   },
   name: 'app',
