@@ -5,13 +5,19 @@
     <router-link :to="'/profile/' +username ">Perfil</router-link> <br />
     <button @click="irPara('/about')">Ir Para sobre</button>
     <router-view></router-view>
+    <contador-component></contador-component>
+   <div>{{$store.state.count}}</div> 
   </div>
 </template>
 
 <script>
-
+import ContadorComponent from './components/ContadorComponent';
 
 export default {
+
+  components: {
+    ContadorComponent
+  },
   data() {
     return {
       username: 'michel',
@@ -23,10 +29,7 @@ export default {
       this.$router.push(path)
     }
   },
-  name: 'app',
-  components: {
-
-  }
+  name: 'app'
 }
 </script>
 
