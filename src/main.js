@@ -15,7 +15,8 @@ const store = new Vuex.Store({
     }
   },
   getters: {
-    getProximoContador: state => state.count+1
+    getProximoContador: state => state.count+1,
+    reset: state => state.count = 0
   }
 })
 
